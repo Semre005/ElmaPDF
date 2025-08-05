@@ -1,0 +1,64 @@
+import type { SVGProps } from "react";
+
+export function ElmaYukleme(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="100"
+      height="100"
+      viewBox="-50 -50 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <defs>
+        <path id="caterpillar-path" d="M 0, -40 a 40,40 0 1,1 0,80 a 40,40 0 1,1 0,-80" fill="none" stroke="none" />
+      </defs>
+
+      <g>
+        <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#caterpillar-path"/>
+        </animateMotion>
+        
+        <g id="caterpillar" fill="hsl(var(--primary))">
+            <circle cx="-12" cy="0" r="5">
+              <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="1s" begin="0.3s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="-4" cy="-2" r="5">
+              <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="1s" begin="0.2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="4" cy="-2" r="5">
+               <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="1s" begin="0.1s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="12" cy="0" r="5">
+               <animateTransform attributeName="transform" type="scale" values="1; 1.1; 1" dur="1s" begin="0s" repeatCount="indefinite" />
+            </circle>
+            
+            <g id="head" transform="translate(12, 0)">
+                <circle r="5" />
+                <circle cx="-1.5" cy="-1" r="1" fill="white" />
+                <circle cx="1.5" cy="-1" r="1" fill="white" />
+                <circle cx="-1.5" cy="-1.2" r="0.5" fill="black" />
+                <circle cx="1.5" cy="-1.2" r="0.5" fill="black" />
+            </g>
+        </g>
+      </g>
+      
+      <g transform="scale(0.8) translate(0, 4)">
+        <path
+          d="M 18.3,3.2 C 11.4,3.2 7.3,9.5 7.3,16.4 C 7.3,23.3 11.4,31.5 18.3,31.5 C 25.2,31.5 28.3,27.4 28.3,27.4 C 28.3,27.4 31.4,31.5 38.3,31.5 C 45.2,31.5 49.3,23.3 49.3,16.4 C 49.3,9.5 45.2,3.2 38.3,3.2 C 31.4,3.2 28.3,7.3 28.3,7.3 C 28.3,7.3 25.2,3.2 18.3,3.2 Z"
+          transform="translate(-28, -15)"
+          fill="#D32F2F"
+        />
+        <path
+          d="M 28 2 L 30 2 L 30 -5 L 28 -5 Z"
+          transform="translate(-28, -15) rotate(15, 29, 0)"
+          fill="#8B4513"
+        />
+        <path
+          d="M 32.3,4.2 C 32.3,4.2 36.2,-2.5 42.3,-2.5 C 48.4,-2.5 48.3,3.2 42.3,4.2 C 36.3,5.2 32.3,4.2 32.3,4.2 Z"
+          transform="translate(-28, -15) rotate(25, 38, 0)"
+          fill="#4CAF50"
+        />
+      </g>
+    </svg>
+  );
+}
